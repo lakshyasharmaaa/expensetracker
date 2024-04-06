@@ -1,0 +1,326 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282C32;
+    color: white;
+    margin-bottom: 80px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 999; /* Ensure the navigation bar is on top */
+}
+
+.navbar a {
+    color: white; /* Make text transparent */
+    -webkit-background-clip: text; /* Apply gradient to text */
+    background-clip: text;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 15px;
+    padding: 2px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar a:first-child {
+    float: left; /* Float the first link to the left */
+}
+
+.navbar a:not(:first-child) {
+    float: right; /* Float all links except the first one to the right */
+}
+
+.hero {
+    position: relative;
+    background-image: url('https://i.pcmag.com/imagery/roundups/02jPqkmhQUymIWgRIKDSFGT-9..v1692991502.jpg'); /* Replace 'background-image.jpg' with your image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    height: 700px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; 
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Overlay color */
+    opacity: 0.8; /* Adjust the opacity to control the fade effect */
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient font color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-start {
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient button color */
+    color: #fff;
+}
+
+.btn-learn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.features-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.features-image {
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Ensure proper positioning */
+    width: 50%; /* Ensure image doesn't overflow */
+}
+
+.features-image img {
+    position: relative;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    max-width: 100%;
+    height: auto;
+    border-radius: 10% / 10%; /* Apply curved border */
+    object-fit: contain; /* Ensure image covers entire container */
+    transform: translateX(-50%);
+}
+
+.features-list {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.features-list h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.features-list ul {
+    list-style-type: none;
+}
+
+.features-list li {
+    margin-bottom: 40px;
+}
+
+.features-list h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.features-list p {
+    font-size: 18px;
+}
+
+/* Gradient Styles */
+.features-list h2.gradient-heading,
+.features-list h3.gradient-heading {
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure blocks stretch to fill the container vertically */
+    margin-top: 50px; /* Adjust margin as needed */
+}
+
+.info-block {
+    flex: 1;
+    text-align: left;
+    background-color: #282C32; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Ensure relative positioning */
+}
+
+.info-block .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.info-block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    font-size: 18px;
+}
+
+/* Ensure all boxes have the same height */
+.info-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block h2,
+.info-block p {
+    flex: 1;
+}
+.gradient-text {
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.customizable-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 50px;
+}
+
+.customizable-block {
+    flex-basis: 45%; /* Adjust the width of each block */
+    margin: 10px;
+    text-align: center;
+    background-color: #282C32;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.customizable-block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.customizable-block p {
+    font-size: 18px;
+}
+
+.category-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin-top: 50px;
+}
+
+.category-block {
+    flex-basis: 45%; /* Adjust the width of each block */
+    margin: 10px;
+    text-align: center;
+    background-color: #282C32;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.category-block .icon {
+    margin-bottom: 20px;
+}
+
+.category-block .icon img {
+    max-width: 50px; /* Adjust the size of the icon */
+}
+
+.category-block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.category-block p {
+    font-size: 18px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #ee0979, #ff6a00); /* Gradient background on hover */
+}
+.footer {
+    background-color: #282C32;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

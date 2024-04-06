@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Expense Tracker</title> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head> 
+  
+<body onload="changeInput()"> 
+    <div> 
+        <h1 class="heading gradient-text" style=" font-size:50px; margin-bottom: 50px; margin-top: 50px;"> Expense Tracker</h1>
+    </div> 
+    <div class="summary"> 
+        <div> 
+            <h1>Balance: 
+                <span id="balance"> 
+                      0 
+                  </span> 
+            </h1> 
+        </div> 
+        <br /> 
+        <div class="total"> 
+            <div> 
+                Total Income: 
+                <div> 
+                    <h2 style="color: green;"><span id="totalIncome">0</span></h2>
+                </div> 
+            </div> 
+            <hr class="verticle" /> 
+            <div> 
+                Total Expenses: 
+                <div> 
+                    <h2 style="color: red;"> <span id="totalExpense">0</span></h2>
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+    <div class="root"> 
+        <div class="chart-container">
+            <p style="font-weight: bold;">Expenses Breakdown Chart</p>
+            <canvas id="chart"></canvas>
+        </div>
+        <hr class="vertical" /> 
+        <div id="new"> 
+            <h2>Add Transactions</h2> 
+            <div class="inputs"> 
+                <div class="inputitem"> 
+                    <p style="width: 9rem"> 
+                        Entry type: 
+                    </p> 
+                    <select id='itemType' onchange="changeInput()"> 
+                        <option value="0">Expense</option> 
+                        <option value="1">Income</option> 
+                    </select> 
+                </div> 
+                <div class="inputitem" id="nameDiv"> 
+                    <p>Name: 
+                    <input id="name" 
+                           type="text"
+                           value="" 
+                           placeholder="name" /> </p>
+                </div>
+                <div class="inputitem" id="expenseDiv" style="display: none;"> 
+                    <p>Expense:
+                    <select id="expenseType"> 
+                        <option value="food">Food</option> 
+                        <option value="rent">Rent</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="other">Other</option> 
+                    </select> </p>
+                </div>  
+                <div class="inputitem"> 
+                    <p style="width: 9rem">Amount:</p> 
+                    <input value="0" 
+                           id="amount"
+                           name="mod" 
+                           type="number" 
+                           placeholder="amount" /> 
+                </div> 
+            </div> 
+            <button onclick="addItem()"> 
+                Add Expense 
+            </button> 
+        </div> 
+    </div>
+    <div>
+        <h2 class="heading gradient-text" style="margin-bottom: 10px; margin-top: 50px;">Transactions</h2>
+    </div>
+    <ul id="transactionList" style="font-size: larger; font-weight: lighter; list-style: none;"></ul>
+    <script>
+    function changeInput() {
+        var itemType = document.getElementById('itemType').value;
+        if (itemType == '0') { // Expense
+            document.getElementById('nameDiv').style.display = 'none';
+            document.getElementById('expenseDiv').style.display = 'block';
+        } else { // Income
+            document.getElementById('nameDiv').style.display = 'block';
+            document.getElementById('expenseDiv').style.display = 'none';
+        }
+    }
+    </script>
+    
+    <script src="script.js"></script> 
+    
+</body> 
+  
+</html>
